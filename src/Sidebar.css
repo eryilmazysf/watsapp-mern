@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 10vh;
+  min-width: 5vh;
 }
 .sidebar__headerRight > .MuiSvgIcon-root {
   margin-right: 2vw;

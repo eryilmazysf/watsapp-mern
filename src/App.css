@@ -2,13 +2,15 @@
   display: grid;
   place-items: center;
   height: 100vh;
-  background-color: #dadbd3;
+  width: 100%;
+  margin: auto;
+  /* background-color: #dadbd3; */
 }
 .app__body {
   display: flex;
   background-color: #ededed;
-  margin-top: -50px;
+  /* margin-top: -150px; */
   height: 90vh;
-  width: 100vw;
+  width: 100%;
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0.75);
 }

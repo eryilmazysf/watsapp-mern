@@ -9,7 +9,7 @@ import {
   Mic,
 } from "@material-ui/icons";
 
-function Chat() {
+function Chat({ messages }) {
   const [input, setInput] = useState();
   function sendMessage() {
     console.log(input);
@@ -36,16 +36,19 @@ function Chat() {
         </div>
       </div>
       <div className="chat__body">
-        <p className="chat__message">
-          <span className="chat__name">Yusuf</span>
-          This is a message
-          <span className="chat__timestamp">{new Date().toLocaleString()}</span>
-        </p>
-        <p className="chat__message chat__receiver">
-          <span className="chat__name">Yasin</span>
-          This is a message
-          <span className="chat__timestamp">{new Date().toLocaleString()}</span>
-        </p>
+        {messages.map((message, index) => (
+          <div key={index}>
+            <p
+              className={`chat__message ${
+                message.received && "chat__receiver"
+              }`}
+            >
+              <span className="chat__name">{message.name}</span>
+              {message.message}
+              <span className="chat__timestamp">{message.timestamp}</span>
+            </p>
+          </div>
+        ))}
       </div>
       <div className="chat__footer">
         <InsertEmoticon />
