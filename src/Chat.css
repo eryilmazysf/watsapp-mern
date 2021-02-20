@@ -9,6 +9,9 @@
   align-items: center;
   border-bottom: 1px solid lightgray;
 }
+.chat__headerRight {
+  display: flex;
+}
 .chat__headerInfo {
   flex: 1;
   padding-left: 20px;
@@ -69,9 +72,9 @@
   border: none;
   outline: none;
 }
-.chat__footer > form > button {
+/* .chat__footer > form > button {
   display: none;
-}
+} */
 .chat__footer > .MuiSvgIcon-root {
   padding: 10px;
   color: gray;

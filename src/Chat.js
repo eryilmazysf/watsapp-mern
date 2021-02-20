@@ -7,13 +7,22 @@ import {
   MoreVert,
   InsertEmoticon,
   Mic,
+  Telegram,
 } from "@material-ui/icons";
+import axios from "./axios";
 
 function Chat({ messages }) {
-  const [input, setInput] = useState();
-  function sendMessage() {
-    console.log(input);
-  }
+  const [input, setInput] = useState("");
+  const sendMessage = async (e) => {
+    e.preventDefault(); //block refresh
+    await axios.post("/messages/new", {
+      message: input,
+      name: "Demo App",
+      timestamp: new Date().toLocaleString(),
+      received: false,
+    });
+    setInput("");
+  };
 
   return (
     <div className="chat">
@@ -54,15 +63,16 @@ function Chat({ messages }) {
         <InsertEmoticon />
         <form>
           <input
+            value={input}
             onChange={(e) => {
               setInput(e.target.value);
             }}
             placeholder="Type a message"
             type="text"
           />
-          <button onClick={sendMessage} type="submit">
-            Send Message
-          </button>
+          <IconButton onClick={sendMessage} type="submit">
+            <Telegram />
+          </IconButton>
         </form>
         <Mic />
       </div>
