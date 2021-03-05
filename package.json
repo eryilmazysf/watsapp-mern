@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy":"http://wp-env.eba-bwdchcds.us-east-1.elasticbeanstalk.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
